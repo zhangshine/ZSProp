@@ -4,4 +4,5 @@ export PATH
 export PS1
 
 alias ls='ls --color=auto'
+alias ll='ls -al'
 
