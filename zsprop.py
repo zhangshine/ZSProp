@@ -40,10 +40,10 @@ if __name__ == '__main__':
         usage()
         sys.exit(-1)
 
-    fn = {
-        'update': update,
-        'install': install
-    }
+    fn = dict()
+    for name, func in locals().items():
+        if not name.startswith('_') and callable(func):
+            fn[name] = func
 
     cmd = sys.argv[1]
     fn.get(cmd, usage)()
